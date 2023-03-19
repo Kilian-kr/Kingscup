@@ -27,7 +27,7 @@ function update() {
   $(document).ready(function () {
     // Make an AJAX call to get the game data
     $.ajax({
-      url: "game_data.php",
+      url: "etc/game_data.php",
       type: "GET",
       data: { get_update: game_id },
       success: function (response) {
@@ -59,7 +59,7 @@ function loadimages() {
     deleteImages();
     // Make an AJAX call to get the game data
     $.ajax({
-      url: "game_data.php",
+      url: "etc/game_data.php",
       type: "GET",
       data: { load_game: game_id },
       success: function (response) {
@@ -135,7 +135,7 @@ function addEventListenersToCards() {
       if (checkCards[checkCards.length - 1] === "cards_back.png") {
         // Send a request to update the game with the new card
         $.ajax({
-          url: "game_data.php",
+          url: "etc/game_data.php",
           type: "GET",
           data: {
             game_id: game_id,
@@ -152,7 +152,7 @@ function addEventListenersToCards() {
         // If the image is not a card_back, it means the card was moved
         // Send a request to update the game with the card's new position
         $.ajax({
-          url: "game_data.php",
+          url: "etc/game_data.php",
           type: "GET",
           data: {
             game_id: game_id,

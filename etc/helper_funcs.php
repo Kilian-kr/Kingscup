@@ -33,7 +33,7 @@ function sanitize_input($input){
 // Function to generate the HTML body of the page
 function generateBody(){
     // Load the HTML template from file
-    $template = file_get_contents("index_frontend.html");
+    $template = file_get_contents("etc/index_frontend.html");
     // Replace the placeholder "{game_id}" with a randomly generated game ID
     $template = str_replace("{game_id}", generateRandomString(5), $template);
     // Return the HTML template with the replaced game ID
