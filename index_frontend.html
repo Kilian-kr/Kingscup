@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KingsCup</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <script type="javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <script src="jquery.ui.touch-punch.js"></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<h1 class="title">KingsCup</h1>
+            <form name="new_game" action="index.php" method="get">
+            <input type="hidden" name="game_id" value={game_id}>
+			<button id="new-game-btn">Start new game</button>
+            </form>
+			<button id="rules-btn"><a href="#rules">See rules</a></button>
+		</nav>
+	</header>
+
+	<section class="copy-link-section">
+		<button id="copy-link-btn">Copy link <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg></button>
+		<input type="text" id="link-input" value="https://apps.kraatz.me/" readonly>
+	</section>
+
+	<main>
+		<div id="game-field" draggable="true">
+			<img src="images/logo.png" alt="KingsCup logo"  style="width:200px; height: 200px;top: 450px; left: 255px;position: absolute;">
+		</div>
+
+		<section id="rules">
+			<h2>Rules</h2>
+            <p><img src="cards/ace_of_hearts.png"></p><p> Ace: Waterfall. Everyone starts drinking at the same time, and no one can stop until the person to their right stops.</p>
+            <p><img src="cards/2_of_hearts.png"></p><p>2: You. Choose someone to take a drink.</p>
+            <p><img src="cards/3_of_hearts.png"></p><p> 3: Me. You take a drink.</p>
+            <p><img src="cards/4_of_hearts.png"></p><p> 4: Floor. Everyone touches the floor, and the last person to do so takes a drink.</p>
+            <p><img src="cards/5_of_hearts.png"></p><p> 5: Guys. All guys take a drink.</p>
+            <p><img src="cards/6_of_hearts.png"></p><p> 6: Chicks. All girls take a drink.</p>
+            <p><img src="cards/7_of_hearts.png"></p><p> 7: Heaven. Everyone points to the sky, and the last person to do so takes a drink.</p>
+            <p><img src="cards/8_of_hearts.png"></p><p> 8: Mate. Choose someone to be your mate. Whenever you drink, they drink, and vice versa.</p>
+            <p><img src="cards/9_of_hearts.png"></p><p> 9: Rhyme. Choose a word, and everyone must say a word that rhymes with it. The person who can't think of a word or repeats a word takes a drink.</p>
+            <p><img src="cards/10_of_hearts.png"></p><p> 10: Categories. Choose a category, and everyone takes turns naming something that belongs in that category. The person who can't think of anything or repeats an item takes a drink.</p>
+            <p><img src="cards/jack_of_hearts.png"></p><p> Jack: Make a Rule. You make up a rule that everyone must follow for the rest of the game. If anyone breaks the rule, they take a drink.</p>
+            <p><img src="cards/queen_of_hearts.png"></p><p> Queen: Question Master. You become the question master. If you ask someone a question, and they answer it, they take a drink.</p>
+            <p><img src="cards/king_of_hearts.png"></p><p> King: Pour. Pour some of your drink into the center cup. The person who draws the fourth king must drink the entire contents of the cup.</p>
+            <br><h2>Alternatives for Kings:</h2>
+            <p>King: Virtual Toastmaster. The person who draws the King becomes the virtual toastmaster. Whenever someone takes a drink, they must make a toast to someone or something (e.g., "To good friends", "To getting through this pandemic", etc.).</p>
+            <p>King: Social Media Challenge. The person who draws the King chooses a social media platform and a hashtag. Everyone takes turns posting something on that platform using the hashtag. The last person to post takes a drink.</p>
+            <p>King: Virtual Scavenger Hunt. The person who draws the King gives everyone a minute to find an item in their house that fits a certain description (e.g., something yellow, something round, etc.). The last person to find an item takes a drink.</p>
+            <p>King: Virtual Trivia Master. The person who draws the King becomes the virtual trivia master. They ask a trivia question, and the first person to answer correctly can give out a drink. If no one answers correctly, the trivia master takes a drink.</p>
+            <p>King: Virtual Karaoke. The person who draws the King chooses a song, and everyone takes turns singing a portion of it. The person who sings the worst takes a drink.</p>
+
+            
+		</section>
+	</main>
+</body>
+</html>

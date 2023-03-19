@@ -1,0 +1,137 @@
+/* Body */
+body {
+    width: 700px;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f9fd;
+}
+
+/* Header */
+header {
+    background-color: #223a5f;
+    color: white;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title{
+    cursor: default;
+}
+
+nav button,a {
+    background-color: #4e7c9c;
+    color: white;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav button:hover,a:hover {
+    background-color: #375e7f;
+}
+
+/* Main */
+main {
+    padding: 20px;
+}
+
+#game-field {
+    background-color: #d4e8f7;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    width: 600px;
+    height: 600px;
+}
+
+#game-field img {
+    display: block;
+    margin: auto;
+}
+
+
+.copy-link-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#copy-link-btn {
+    background-color: #4e7c9c;
+    color: white;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#copy-link-btn:hover {
+    background-color: #375e7f;
+}
+
+#link-input {
+    flex: 1;
+    margin-left: 20px;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 16px;
+    background-color: #f3f9fd;
+}
+    
+#rules-btn {
+    background-color: #4e7c9c;
+    color: white;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#rules-btn:hover {
+    background-color: #375e7f;
+}
+
+#rules img {
+    background-color: white;
+    width: 70px;
+    height: auto;
+    border: solid;
+  }
+  
+  #rules {
+    font-family: 'Georgia';
+    text-align: center;
+    width: 645px;
+    margin-top: 20px;
+    background-color: #d4e8f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#rules h2 {
+    margin-top: 0;
+}
+
+#rules p {
+    margin-bottom: 0;
+    font-size: 20px;
+    color: #34495e;
+    cursor: default;
+}
