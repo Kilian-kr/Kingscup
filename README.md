@@ -10,18 +10,35 @@ To play Kingscup, you'll need to have a web browser installed on your computer o
 Once you're on the website, you can create a new game by clicking on the "New Game" button. This will generate a unique game code that you can share with your friends. They can then enter the code on the website to join the game.
 ## Rules
 
-The rules of Kingscup are simple:
+#### The rules of Kingscup are simple:
 
-    Each player takes turns drawing a card from the deck.
-    Each card has a specific action associated with it. These actions can vary depending on the version of the game you're playing, but some common examples include:
-        "Waterfall": All players start drinking at the same time, and can't stop until the person to their left stops.
-        "Thumbmaster": The person who draws the card becomes the Thumbmaster, and can put their thumb on the table at any time. The other players must follow suit, and the last person to do so must drink.
-        "Categories": The person who draws the card picks a category (e.g. types of fruit), and everyone takes turns naming items from that category. The first person who can't think of an item must drink.
-    The game continues until all the cards have been drawn, or until the players decide to end it.
+- Each player takes turns drawing a card from the deck.
+- Each card has a specific action associated with it. These actions can vary depending on the version of the game you're playing. When opening the game the Rules section will show you the most common rules: https://apps.kraatz.me/kingscup#Rules
+
+## Documentation
+
+Detailed [documentation](docs/DOCUMENTATION.md) on the game code and its components can be found in the docs folder of this repository.  
+
+
+## Installation
+#### Prerequisites
+
+- A web server such as Apache or Nginx
+- PHP version 7 or higher
+- An SQL database such as MySQL or MariaDB
+
+#### To install Kingscup on your own web server, follow these steps
+- Clone or download the game code from this GitHub repository.
+
+- Create a new SQL database using the provided SQL file located in etc/create_db.sql. You can use a tool like phpMyAdmin to easily create the database and import the SQL file.
+
+- Update the database connection information in etc/db.php to match your database credentials.
+
+- Upload all of the game files to your web server directory. You can use an FTP client like FileZilla to upload the files.
+
+- Open your web browser and navigate to the URL where you uploaded the game files. You should see the game interface and be able to start playing!
+
 
 ## Contributing
-
-This repository is open to contributions from anyone who wants to improve the Kingscup web application. If you'd like to contribute, feel free to submit a pull request with your changes. Before doing so, please read the contributing guidelines for more information on how to get started.
-License
 
 Kingscup is licensed under the MIT license. This means that you can use, modify, and distribute the code for any purpose, as long as you include the original copyright notice and disclaimer.
