@@ -15,8 +15,12 @@ Once you're on the website, you can create a new game by clicking on the "New Ga
 - Each player takes turns drawing a card from the deck.
 - Each card has a specific action associated with it. These actions can vary depending on the version of the game you're playing. When opening the game the Rules section will show you the most common rules: https://apps.kraatz.me/kingscup#Rules
 
+## Documentation
 
-## Getting Started
+Detailed [documentation](docs/DOCUMENTATION.md) on the game code and its components can be found in the docs folder of this repository.  
+
+
+## Installation
 
 - Clone or download the game code from this GitHub repository.
 
