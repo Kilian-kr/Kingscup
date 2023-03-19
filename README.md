@@ -21,7 +21,13 @@ Detailed [documentation](docs/DOCUMENTATION.md) on the game code and its compone
 
 
 ## Installation
+#### Prerequisites
 
+- A web server such as Apache or Nginx
+- PHP version 7 or higher
+- An SQL database such as MySQL or MariaDB
+
+#### To install Kingscup on your own web server, follow these steps
 - Clone or download the game code from this GitHub repository.
 
 - Create a new SQL database using the provided SQL file located in etc/create_db.sql. You can use a tool like phpMyAdmin to easily create the database and import the SQL file.
