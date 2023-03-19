@@ -1,9 +1,7 @@
 <?php
-
 // Require the necessary files
 require 'db.php';
 require 'helper_funcs.php';
-
 // Check if the request method is GET
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     
@@ -44,8 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         echo "cards/$new_card_url";
     }
 
-
-
 // Check if all necessary parameters are set in the URL
     if (isset($_GET['card']) && isset($_GET['game_id']) && isset($_GET['left_val']) && isset($_GET['top_val'])) {
         // Sanitize user input for game ID, card name, left value, and top value
@@ -66,9 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         // Print a success message with the updated values
         echo "Card: $card_url, Left Val: $left_val, Top Val: $top_val, Game ID: $game_id";
-    }   
-    
-
+    }    
     // This block of code retrieves the card updates for a specific game ID
     if (isset($_GET['get_update'])) {
         $game_id = sanitize_input($_GET['get_update']);
@@ -90,7 +84,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo $result;
         }
     }
-
     // This block of code retrieves the initial card layout for a specific game ID
     if (isset($_GET['load_game'])) {
         $game_id = sanitize_input($_GET['load_game']);
@@ -125,7 +118,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $result = "{$row['card_name']}:{$row['top_val']}:{$row['left_val']}:cards/{$row['card_src']}#";
             echo $result;
         }
-    }
-    
+    } 
 }
 ?>
