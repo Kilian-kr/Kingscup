@@ -1,3 +1,30 @@
+# Table of Contents
+
+- [Documentation for index.php](#documentation-for-indexphp)
+  - [Required files](#required-files)
+  - [HTTPS Redirect](#https-redirect)
+  - [HTML Body Generation](#html-body-generation)
+  - [Game ID Query String](#game-id-query-string)
+  - [Circle Layout](#circle-layout)
+  - [Database Connection](#database-connection)
+  - [Active Games Table](#active-games-table)
+  - [Hidden Cards Table](#hidden-cards-table)
+  - [JavaScript Card Images](#javascript-card-images)
+- [Documentation for index.js](#documentation-for-indexjs)
+  - [Global Variables](#global-variables)
+  - [Functions](#functions)
+- [Documentation for game_data.php](#documentation-for-game_dataphp)
+  - [Required files](#required-files-1)
+  - [Request Methods](#request-methods)
+    - [Adding a new card](#adding-a-new-card)
+    - [Updating a card](#updating-a-card)
+    - [Getting update](#getting-update)
+    - [Loading Gameboard](#loading-gameboard)  
+  - [Parameters](#parameters)
+- [Documentation for helper_funcs.php](#documentation-for-helper_funcsphp)
+  - [Variables](#variables)
+  - [Functions](#functions-1)
+   
 
 
 
@@ -5,6 +32,7 @@
 
 
 ## Documentation for index.php
+###### [Back to Top](#table-of-contents)
 
 The ```index.php``` file is the main entry point for the web application. It is responsible for handling requests and rendering the HTML content for the user's web browser.
 ### Required files
@@ -126,7 +154,7 @@ It's also worth noting that the card images are not preloaded before the page is
 
 
 ## Documentation for index.js
-
+###### [Back to Top](#table-of-contents)
 This file is a client-side script written in JavaScript that handles the functionality for the game application. It consists of functions that update the game's state, load images of cards and add event listeners to the available cards.
 ### Global Variables
 ```javascript
@@ -206,9 +234,9 @@ addEventListenersToCards()
 
 
 ## Documentation for game_data.php
-### Introduction
+###### [Back to Top](#table-of-contents)
 
-game_data.php is a PHP script that interacts with a SQL database to manage the card game. It receives GET requests with specific parameters to create, update, and retrieve card data for a specific game ID.
+```game_data.php``` is a PHP script that interacts with a SQL database to manage the card game. It receives GET requests with specific parameters to create, update, and retrieve card data for a specific game ID.
 
 #### Required files
 The following files are required for get_data.php to function correctly:
@@ -243,39 +271,40 @@ To retrieve the initial state of the game, the ```load_game``` parameter must be
 This parameter is used to add a new card to the game board. It requires the following additional parameters:
 
 ```php
-$game_id // The ID of the game that the card is being added to.
-$new_card // The URL of the new card.
-$left_val // The left value (horizontal position) of the new card.
-$top_val  // The top value (vertical position) of the new card.
+game_id // The ID of the game that the card is being added to.
+new_card // The URL of the new card.
+left_val // The left value (horizontal position) of the new card.
+top_val  // The top value (vertical position) of the new card.
 ```
 #### ```card``` 
 This parameter is used to update the position of an existing card on the game board. It requires the following additional parameters:
 
 ```php
-$game_id // The ID of the game that the card is being updated in.
-$card // The URL of the card that is being updated.
-$left_val // The new left value (horizontal position) of the card.
-$top_val // The new top value (vertical position) of the card.
+game_id // The ID of the game that the card is being updated in.
+card // The URL of the card that is being updated.
+left_val // The new left value (horizontal position) of the card.
+top_val // The new top value (vertical position) of the card.
 ```
 
 #### ```get_update```
 This parameter is used to retrieve the current state of the game. It requires the following additional parameter:
 
 ```php
-$game_id // The ID of the game that the data is being retrieved for.
+game_id // The ID of the game that the data is being retrieved for.
 ```
 
 #### ```load_game ```
 This parameter is used to retrieve the initial state of the game. It requires the following additional parameter:
 
 ```php
-$game_id // The ID of the game that the data is being retrieved for.
+game_id // The ID of the game that the data is being retrieved for.
 ```
 
 
 
 
-## Helper_funcs.php Documentation
+## Documentation for helper_funcs.php
+###### [Back to Top](#table-of-contents)
 
 The helper_funcs.php file contains several helper functions.
 
