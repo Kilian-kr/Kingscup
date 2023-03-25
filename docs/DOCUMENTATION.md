@@ -259,10 +259,10 @@ To update the position of an existing card on the game board, the ```card``` par
 
 #### Getting update
 
-To retrieve the current state of the game, the ```get_update``` parameter must be included in the URL along with the ```game_id``` parameter. The script will check if the required parameters are set and sanitize them. It will then connect to the database and retrieve the data for the specified game. It will then loop through the results and create a formatted string with the card data. Finally, it will print the formatted string.
+To retrieve the current state of the game, the ```get_update``` parameter must be included in the URL along with the ```game_id``` parameter. The script will check if the required parameters are set and sanitize them. It will then connect to the database and retrieve the data for the specified game. It will then loop through the results and create a formatted string with the card data. Finally, it will return a json with all the values.
 
 #### Loading Gameboard
-To retrieve the initial state of the game, the ```load_game``` parameter must be included in the URL along with the ```game_id parameter```. The script will check if the required parameters are set and sanitize them. It will then connect to the database and retrieve the data for the specified game. It will then loop through the results and create a formatted string with the card data. Finally, it will print the formatted string.
+To retrieve the initial state of the game, the ```load_game``` parameter must be included in the URL along with the ```game_id parameter```. The script will check if the required parameters are set and sanitize them. It will then connect to the database and retrieve the data for the specified game. It will then loop through the results and create a formatted string with the card data. Finally, it will return a json array with all the values.
 
 
 ### Parameters
