@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         echo "cards/$new_card_url";
     }
 
-// Check if all necessary parameters are set in the URL
+    // Check if all necessary parameters are set in the URL
     if (isset($_GET['card']) && isset($_GET['game_id']) && isset($_GET['left_val']) && isset($_GET['top_val'])) {
         // Sanitize user input for game ID, card name, left value, and top value
         $game_id = sanitize_input($_GET['game_id']);
@@ -61,7 +61,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         mysqli_stmt_execute($stmt);
 
         // Print a success message with the updated values
-        echo "Card: $card_url, Left Val: $left_val, Top Val: $top_val, Game ID: $game_id";
+
+        $data = array(
+            'card' => $card_url,
+            'left_val' => $left_val,
+            'top_val' => $top_val,
+            'game_id' => $game_id
+        );
+        
+        echo json_encode($data);
     }    
     // This block of code retrieves the card updates for a specific game ID
     if (isset($_GET['get_update'])) {
@@ -79,10 +87,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $results = $stmt->get_result();
     
         // Loop through the results and create a formatted string with the card data
+        $data = array();
+
         foreach($results as $row) {
-            $result = "#{$row['card_name']}:{$row['top_val']}:{$row['left_val']}:cards/{$row['card_src']}";
-            echo $result;
+            $result = array(
+                'card_name' => $row['card_name'],
+                'top_val' => $row['top_val'],
+                'left_val' => $row['left_val'],
+                'card_src' => "cards/{$row['card_src']}"
+            );
+            array_push($data, $result);
         }
+        
+        echo json_encode($data);
     }
     // This block of code retrieves the initial card layout for a specific game ID
     if (isset($_GET['load_game'])) {
@@ -100,11 +117,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $results_hidden = $stmt_hidden->get_result();
 
         // Loop through the results and create a formatted string with the hidden card data
-        foreach($results_hidden as $row) {
-            $result = "{$row['card_name']}:{$row['top_val']}:{$row['left_val']}:cards/cards_back.png#";
-            echo $result;
-        }
+        $data = array();
 
+        foreach($results_hidden as $row) {
+            $result = array(
+                'card_name' => $row['card_name'],
+                'top_val' => $row['top_val'],
+                'left_val' => $row['left_val'],
+                'card_src' => "cards/cards_back.png"
+            );
+            array_push($data, $result);
+        }
         // Prepare the SQL statement to retrieve active card data for the game
         $stmt_active = $con->prepare("SELECT card_src, card_name, top_val, left_val FROM active_cards WHERE game_id=?");
         $stmt_active->bind_param("s", $game_id);
@@ -115,9 +138,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         // Loop through the results and create a formatted string with the active card data
         foreach($results_active as $row) {
-            $result = "{$row['card_name']}:{$row['top_val']}:{$row['left_val']}:cards/{$row['card_src']}#";
-            echo $result;
+            $result = array(
+                'card_name' => $row['card_name'],
+                'top_val' => $row['top_val'],
+                'left_val' => $row['left_val'],
+                'card_src' => "cards/{$row['card_src']}"
+            );
+            array_push($data, $result);
         }
+        
+        echo json_encode($data);
     } 
 }
 ?>

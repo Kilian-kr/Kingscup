@@ -31,25 +31,24 @@ function update() {
       type: "GET",
       data: { get_update: game_id },
       success: function (response) {
-        // Split the response into updates
-        const updates = response.split("#");
-        // Loop through each update
-        for (let i = 1; i < updates.length; i++) {
-          // Split the update into individual elements
-          elem = updates[i].split(":");
+        // Parse the JSON response
+        const updates = JSON.parse(response);
+        // Loop through each data object
+        updates.forEach(function (elem) {
           // Get the corresponding element in the DOM
-          elem_ = document.getElementById(elem[0]);
+          const elem_ = document.getElementById(elem.card_name);
           // If the element exists in the DOM, update its properties
           if (elem_ !== null) {
-            elem_.src = elem[3];
-            elem_.style.left = elem[2];
-            elem_.style.top = elem[1];
+            elem_.src = elem.card_src;
+            elem_.style.left = elem.left_val;
+            elem_.style.top = elem.top_val;
           }
-        }
+        });
       },
     });
   });
 }
+
 
 // Function to load images and add them to the game field
 function loadimages() {
@@ -64,22 +63,20 @@ function loadimages() {
       data: { load_game: game_id },
       success: function (response) {
         // Split the response into played cards
-        const played_cards = response.split("#");
+        const played_cards = JSON.parse(response);
         // Loop through each played card
-        for (let i = 0; i < played_cards.length - 1; i++) {
-          // Split the card into individual elements
-          const elem = played_cards[i].split(":");
+        played_cards.forEach(function (elem) {
           // Create a new image element
           const img = document.createElement("img");
 
           // Set the ID, source, and position properties of the image
-          img.id = elem[0];
-          img.src = elem[3];
+          img.id = elem.card_name;
+          img.src = elem.card_src;
           img.style.backgroundColor = "white";
           img.style.border = "thin solid Black";
           img.style.position = "absolute";
-          img.style.left = elem[2];
-          img.style.top = elem[1];
+          img.style.left = elem.left_val;
+          img.style.top = elem.top_val;
           img.style.cursor = "grab";
 
           // Set the z-index property of the image
@@ -100,7 +97,7 @@ function loadimages() {
 
           // Make the image draggable
           $(img).draggable();
-        }
+        })
         // Call the addEventListenersToCards function to add event listeners to the cards
         addEventListenersToCards();
         // Start the interval again after loading the images
