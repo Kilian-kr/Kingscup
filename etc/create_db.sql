@@ -1,9 +1,13 @@
 -- Server-Version: 10.5.18-MariaDB-0+deb11u1
 -- PHP-Version: 8.0.28
 
+CREATE DATABASE IF NOT EXISTS `kingscup`;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
+USE `kingscup`;
 
 -- --------------------------------------------------------
 
